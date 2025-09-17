@@ -58,19 +58,30 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
-      <div class="max-w-lg mx-auto">
-        <input type="text" id="name" placeholder="Your Name" class="w-full p-3 mb-4 border rounded-lg">
-        <input type="email" id="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded-lg">
-        <textarea id="message" placeholder="Your Message" class="w-full p-3 mb-4 border rounded-lg" rows="5"></textarea>
-        <button id="submit" class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">send message</button>
-            <button type="submit">Submit</button>
-      </div>
+ <!-- Contact Section -->
+<section id="contact" class="py-16 bg-white">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+    <div class="max-w-lg mx-auto">
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Your Name"
+          class="w-full p-3 mb-4 border rounded-lg" required>
+        
+        <input type="email" id="email" name="email" placeholder="Your Email"
+          class="w-full p-3 mb-4 border rounded-lg" required>
+        
+        <textarea id="message" name="message" placeholder="Your Message"
+          class="w-full p-3 mb-4 border rounded-lg" rows="5" required></textarea>
+        
+        <button type="submit" id="submit"
+          class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">
+          Send Message
+        </button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="bg-blue-600 text-white p-4 text-center">
@@ -78,7 +89,7 @@
   </footer>
 
   <script>
-    document.getElementById("cardForm").addEventListener("submit", function (event) {
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
       event.preventDefault();
 
       const formData = new FormData(event.target);
@@ -88,7 +99,7 @@
         message: formData.get("message"),
       };
 
-      const scriptURL = "https://script.google.com/macros/s/AKfycbwXQbtuc4Jchj_iX9p1e8hYYuzqr34ge9Yuh5hm3B_63t7aWGi1SdjW1RGaPQwiH9br/exec";
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxCM7Ggd49OX6Ny0PVTcyY2jHqrNdbAL7PT67o5TJ-kob__tedsBfSAjUZKnYIkQ1M/exec";
 
       fetch(scriptURL, {
         method: "POST",
